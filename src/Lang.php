@@ -6,6 +6,7 @@ use EasyApi\I18N\Consts\Core;
 use EasySwoole\Component\Context\ContextManager;
 use EasySwoole\Component\Singleton;
 use EasySwoole\Http\Response;
+use EasySwoole\Utility\File;
 
 class Lang
 {
@@ -123,6 +124,19 @@ class Lang
         }
 
         return $this->lang[$range];
+    }
+
+    /**
+     * 加载语言定义(不区分大小写)
+     * @param string $dir
+     */
+    public function loads(string $dir)
+    {
+        $files = File::scanDirectory($dir);
+        foreach ($files as $file) {
+            $fileInfo = pathinfo($file);
+            $this->load($file, $fileInfo['filename']);
+        }
     }
 
     /**
