@@ -1,0 +1,20 @@
+{
+    "name": "easyapi/i18n",
+    "autoload": {
+        "psr-4": {
+            "EasyApi\\I18N\\": "src/"
+        },
+        "files": ["src/Helper/helper.php"]
+    },
+    "authors": [
+        {
+            "name": "XueSi",
+            "email": "1592328848@qq.com"
+        }
+    ],
+    "require": {
+        "php": ">= 7.3",
+        "easyswoole/component": "^2.3",
+        "easyswoole/http": "^2.0"
+    }
+}
