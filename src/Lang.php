@@ -133,7 +133,7 @@ class Lang
     public function loads(string $dir)
     {
         $files = File::scanDirectory($dir);
-        foreach ($files as $file) {
+        foreach ($files['files'] as $file) {
             $fileInfo = pathinfo($file);
             $this->load($file, $fileInfo['filename']);
         }
